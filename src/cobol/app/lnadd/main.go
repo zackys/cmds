@@ -9,14 +9,14 @@ import (
 
 func main() {
 	fs := flag.NewFlagSet(os.Args[0], flag.ExitOnError)
-	var beginLn = fs.Int("b", 100000, "Line Number from")
-	var stepLn = fs.Int("s", 10, "Line Number step")
+	var beginLn = fs.Int("start", 100000, "Line Number from")
+	var stepLn = fs.Int("step", 10, "Line Number step")
 
 	fs.Parse(os.Args[1:])
 
-	fmt.Println("Begin:", *beginLn)
-	fmt.Println("Step:", *stepLn)
-	fmt.Println("File", fs.Args())
+//	fmt.Println("Begin:", *beginLn)
+//	fmt.Println("Step:", *stepLn)
+//	fmt.Println("File", fs.Args())
 
 	var fp *os.File
 	var err error
@@ -35,7 +35,7 @@ func main() {
 	var ln int = *beginLn
 	for scanner.Scan() {
 		line := scanner.Text()
-		fmt.Print(fmt.Sprintf("%06d %s\n", ln, line))
+		fmt.Print(fmt.Sprintf("%06d%s\n", ln, line))
 		ln += *stepLn
 	}
 	if err := scanner.Err(); err != nil {

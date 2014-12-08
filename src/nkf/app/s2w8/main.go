@@ -10,14 +10,14 @@ import (
 
 func main() {
 	fs := flag.NewFlagSet(os.Args[0], flag.ExitOnError)
-	var ic = fs.String("ic", "Shift_JIS", "Line Number from")
-	var oc = fs.String("oc", "UTF-8", "Line Number from")
+//	var ic = fs.String("ic", "Shift_JIS", "Line Number from")
+//	var oc = fs.String("oc", "UTF-8", "Line Number from")
 
 	fs.Parse(os.Args[1:])
 
-	fmt.Println("ic:", *ic)
-	fmt.Println("oc:", *oc)
-	fmt.Println("File", fs.Args())
+//	fmt.Println("ic:", *ic)
+//	fmt.Println("oc:", *oc)
+//	fmt.Println("File", fs.Args())
 
 	var fp *os.File
 	var err error
